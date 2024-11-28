@@ -64,6 +64,32 @@ You can install this extension in several ways:
    - Type "Install from VSIX"
    - Select the downloaded file
 
+## Local Development and Testing
+
+If you want to test or develop the extension locally:
+
+1. **Clone and Setup**
+   ```bash
+   git clone https://github.com/russeree/bitcoin-script-hints-vscode.git
+   cd bitcoin-script-hints-vscode
+   npm install
+   ```
+
+2. **Build the Extension**
+   ```bash
+   npm run package
+   ```
+
+3. **Test in VSCode**
+   - Press `F5` to open a new VSCode window with the extension loaded
+   - Open a Rust file containing `script!` macros
+   - The extension will automatically activate and show stack hints
+
+4. **Development Tips**
+   - Use `npm run watch` during development for automatic rebuilds
+   - After making changes, reload the VSCode window (`Ctrl+R` or `Cmd+R`)
+   - Check the "Output" panel (View -> Output) and select "Bitcoin Script Hints" for logs
+
 ## Requirements
 - Visual Studio Code >= 1.80.0
 - A Rust project using the `script!` macro
