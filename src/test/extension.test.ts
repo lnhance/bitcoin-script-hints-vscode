@@ -1,15 +1,30 @@
 import * as assert from 'assert';
+import { StackState } from '../stackstate';
+import { OP_ADD } from '../opcodes/op_add';
 
-// You can import and use all API from the 'vscode' module
-// as well as import your extension to test it
-import * as vscode from 'vscode';
-// import * as myExtension from '../../extension';
+suite('Bitcoin Script Tests', () => {
+    test('OP_ADD basic functionality', () => {
+        // Test successful addition
+        let state: StackState = {
+            main: ['2', '3'],
+            alt: [],
+            error: undefined
+        };
+        
+        let result = OP_ADD(state);
+        assert.strictEqual(result.error, undefined);
+        assert.strictEqual(result.main.length, 1);
+        assert.strictEqual(result.main[0], '5');
 
-suite('Extension Test Suite', () => {
-	vscode.window.showInformationMessage('Start all tests.');
-
-	test('Sample test', () => {
-		assert.strictEqual(-1, [1, 2, 3].indexOf(5));
-		assert.strictEqual(-1, [1, 2, 3].indexOf(0));
-	});
+        // Test error case - not enough items
+        state = {
+            main: ['1'],
+            alt: [],
+            error: undefined
+        };
+        
+        result = OP_ADD(state);
+        assert.notStrictEqual(result.error, undefined);
+        assert.strictEqual(result.error, 'Need two items for ADD');
+    });
 });
