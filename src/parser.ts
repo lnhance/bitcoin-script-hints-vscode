@@ -1,9 +1,10 @@
 import { StackState } from './stackstate';
-import { opcodes } from './opcodes';
+import { opcodes } from './opcodes/index';
+import { formatState } from './utils';
 
 export function parseInitialState(comment: string): StackState | null {
     const mainMatch = comment.match(/\[(.*?)\]/);
-    if (!mainMatch) return null;
+    if (!mainMatch) { return null; };
 
     const altMatch = comment.match(/\[(.*?)\],\s*\[(.*?)\]/);
     
@@ -27,14 +28,14 @@ export function processScript(content: string, initialState: StackState): string
 
     for (const line of lines) {
         const opMatch = line.match(/OP_\w+/);
-        if (!opMatch) continue;
+        if (!opMatch) { continue; };
 
         const op = opMatch[0];
         
         if (op === 'OP_IF' || op === 'OP_NOTIF') {
             branchState.in_if = true;
             currentState = opcodes[op](currentState);
-            branchState.executing = !currentState.error && currentState.if_result;
+            branchState.executing = !currentState.error && (currentState.if_result ?? false);
             continue;
         }
 

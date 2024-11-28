@@ -11,6 +11,31 @@
     // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
     "typescript.tsc.autoDetect": "off",
     "cSpell.words": [
-        "stackstate"
+        "BOOLAND",
+        "boolor",
+        "BOOLOR",
+        "CHECKLOCKTIMEVERIFY",
+        "CHECKMULTISIG",
+        "CHECKMULTISIGVERIFY",
+        "CHECKSEQUENCEVERIFY",
+        "CHECKSIG",
+        "CHECKSIGADD",
+        "CHECKSIGVERIFY",
+        "CODESEPARATOR",
+        "EQUALVERIFY",
+        "FROMALTSTACK",
+        "GREATERTHAN",
+        "GREATERTHANOREQUAL",
+        "IFDUP",
+        "LESSTHAN",
+        "LESSTHANOREQUAL",
+        "NUMEQUAL",
+        "NUMEQUALVERIFY",
+        "NUMNOTEQUAL",
+        "pubkeys",
+        "PUSHDATA",
+        "RIPEMD",
+        "stackstate",
+        "TOALTSTACK"
     ]
 }
