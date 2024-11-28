@@ -10,9 +10,13 @@ import { OP_VERIFY } from './op_verify';
 import { OP_TOALTSTACK } from './op_toaltstack';
 import { OP_FROMALTSTACK } from './op_fromaltstack';
 import { OP_IFDUP } from './op_ifdup';
+import { OP_DEPTH } from './op_depth';
+import { OP_DROP } from './op_drop';
+import { OP_DUP } from './op_dup';
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
+    // Constants:
     OP_2: OP_NUMBER(2),
     OP_3: OP_NUMBER(3),
     OP_4: OP_NUMBER(4),
@@ -28,16 +32,20 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_14: OP_NUMBER(14),
     OP_15: OP_NUMBER(15),
     OP_16: OP_NUMBER(16),
+    // Flow control:
     OP_NOP,
     OP_IF,
     OP_NOTIF,
     OP_ELSE,
     OP_ENDIF,
     OP_VERIFY,
+    // Stack
     OP_TOALTSTACK,
     OP_FROMALTSTACK,
     OP_IFDUP,
-
+    OP_DEPTH,
+    OP_DROP,
+    OP_DUP,
 };
 
 // Constants
