@@ -13,6 +13,8 @@ import { OP_IFDUP } from './op_ifdup';
 import { OP_DEPTH } from './op_depth';
 import { OP_DROP } from './op_drop';
 import { OP_DUP } from './op_dup';
+import { OP_NIP } from './op_nip';
+
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
@@ -46,6 +48,7 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_DEPTH,
     OP_DROP,
     OP_DUP,
+    OP_NIP,
 };
 
 // Constants
