@@ -45,7 +45,7 @@ import { OP_GREATERTHAN } from './op_greaterthan';
 import { OP_LESSTHANOREQUAL } from './op_lessthanorequal';
 import { OP_GREATERTHANOREQUAL } from './op_greaterthanorequal';
 import { OP_MIN } from './op_min';
-
+import { OP_MAX } from './op_max';
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
@@ -118,5 +118,6 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_LESSTHANOREQUAL,
     OP_GREATERTHANOREQUAL,
     OP_MIN,
+    OP_MAX,
 
 };
