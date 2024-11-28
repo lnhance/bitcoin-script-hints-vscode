@@ -52,11 +52,19 @@ import { OP_CHECKSIG } from './op_checksig';
 import { OP_CHECKSIGVERIFY } from './op_checksigverify';
 import { OP_CHECKMULTISIG } from './op_checkmultisig';
 import { OP_CHECKMULTISIGVERIFY } from './op_checkmultisigverify';
-
+import { OP_CHECKSIGADD } from './op_checksigadd';
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
-    // Constants:
+    // Constants
+    OP_0: OP_NUMBER(0),
+    OP_FALSE: OP_NUMBER(0),
+    OP_PUSHDATA1: OP_NOP,
+    OP_PUSHDATA2: OP_NOP,
+    OP_PUSHDATA4: OP_NOP,
+    OP_1NEGATE: OP_NUMBER(-1),
+    OP_1: OP_NUMBER(1),
+    OP_TRUE: OP_NUMBER(1),
     OP_2: OP_NUMBER(2),
     OP_3: OP_NUMBER(3),
     OP_4: OP_NUMBER(4),
@@ -73,13 +81,14 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_15: OP_NUMBER(15),
     OP_16: OP_NUMBER(16),
 
-    // Flow control:
+    // Flow control
     OP_NOP,
     OP_IF,
     OP_NOTIF,
     OP_ELSE,
     OP_ENDIF,
     OP_VERIFY,
+    OP_RETURN: OP_NOP,
 
     // Stack
     OP_TOALTSTACK,
@@ -106,6 +115,10 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_CAT,
     OP_SIZE,
 
+    // Bitwise logic
+    OP_EQUAL: OP_NUMEQUAL,
+    OP_EQUALVERIFY: OP_NUMEQUALVERIFY,
+
     // Arithmetic
     OP_1ADD,
     OP_1SUB,
@@ -129,12 +142,19 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_WITHIN,
 
     // Crypto
-    OP_HASH,
+    OP_RIPEMD160: OP_HASH,
+    OP_SHA1: OP_HASH,
+    OP_SHA256: OP_HASH,
+    OP_HASH160: OP_HASH,
+    OP_HASH256: OP_HASH,
+    OP_CODESEPARATOR: OP_NOP,
     OP_CHECKSIG,
     OP_CHECKSIGVERIFY,
     OP_CHECKMULTISIG,
     OP_CHECKMULTISIGVERIFY,
-    
+    OP_CHECKSIGADD,
 
-
+    // Locktime
+    OP_CHECKLOCKTIMEVERIFY: OP_NOP,
+    OP_CHECKSEQUENCEVERIFY: OP_NOP,
 };
