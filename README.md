@@ -7,7 +7,7 @@ vscode-bitcoin-script-hints
 </p>
 
 <p align="center">
-<img src="assets/demo.gif" width="600" alt="Bitcoin Script Hints Demo">
+<img src="https://raw.githubusercontent.com/russeree/bitcoin-script-hints-vscode/main/assets/demo.gif" width="600" alt="Bitcoin Script Hints Demo">
 </p>
 
 ## How does it work?
@@ -56,7 +56,7 @@ You can install this extension in several ways:
    - Press Enter
 
 3. **Manual Installation**
-   - Download the `.vsix` file from the [latest release](https://github.com/taproot-wizards/bitcoin-script-hints/releases)
+   - Download the `.vsix` file from the [latest release](https://github.com/russeree/bitcoin-script-hints-vscode/releases)
    - Open VS Code
    - Press `Ctrl+Shift+P` / `Cmd+Shift+P`
    - Type "Install from VSIX"
