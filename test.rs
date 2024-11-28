@@ -1,11 +1,29 @@
 script! {
-    // [7, 2], []
-    OP_ADD
-    OP_DUP
+    // [5], []
+    OP_TOALTSTACK
+    OP_DEPTH
+    OP_0
+    OP_IF
+        OP_SHA256
+        OP_FROMALTSTACK
+        OP_SWAP
+        OP_TOALTSTACK
+    OP_ELSE
+        OP_FROMALTSTACK
+    OP_ENDIF
 }
 
 script! {
-    // [5], []
+    // [5, 1], []
     OP_TOALTSTACK
-    OP_FROMALTSTACK
+    OP_DEPTH
+    OP_1
+    OP_IF
+        OP_SHA256
+        OP_FROMALTSTACK
+        OP_SWAP
+        OP_TOALTSTACK
+    OP_ELSE
+        OP_FROMALTSTACK
+    OP_ENDIF
 }

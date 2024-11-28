@@ -14,17 +14,35 @@ export function parseInitialState(comment: string): StackState | null {
     };
 }
 
+interface BranchState {
+    in_if: boolean;
+    in_else: boolean;
+    executing: boolean;
+    condition: boolean;
+}
+
 export function processScript(content: string, initialState: StackState): string[] {
     const hints: string[] = [];
     let currentState = { ...initialState };
     
     const lines = content.split('\n');
     
-    let branchState = {
+    // Stack of branch states for nested if/else blocks
+    const branchStack: BranchState[] = [];
+    let currentBranch: BranchState = {
         in_if: false,
         in_else: false,
-        executing: true
+        executing: true,
+        condition: true
     };
+
+    function shouldExecute(): boolean {
+        // Check if we're in a nested branch that's not executing
+        for (const branch of branchStack) {
+            if (!branch.executing) return false;
+        }
+        return currentBranch.executing;
+    }
 
     for (const line of lines) {
         const opMatch = line.match(/OP_\w+/);
@@ -32,34 +50,57 @@ export function processScript(content: string, initialState: StackState): string
 
         const op = opMatch[0];
         
-        if (op === 'OP_IF' || op === 'OP_NOTIF') {
-            branchState.in_if = true;
-            currentState = opcodes[op](currentState);
-            branchState.executing = !currentState.error && (currentState.if_result ?? false);
+        // Add NULL hints for control flow operations
+        if (op === 'OP_IF' || op === 'OP_NOTIF' || op === 'OP_ELSE' || op === 'OP_ENDIF') {
+            hints.push('NULL');
+            
+            if (op === 'OP_IF' || op === 'OP_NOTIF') {
+                branchStack.push(currentBranch);
+                if (shouldExecute()) {
+                    currentState = opcodes[op](currentState);
+                    const condition = !currentState.error && (currentState.if_result ?? false);
+                    currentBranch = {
+                        in_if: true,
+                        in_else: false,
+                        executing: condition,
+                        condition: condition
+                    };
+                } else {
+                    currentBranch = {
+                        in_if: true,
+                        in_else: false,
+                        executing: false,
+                        condition: false
+                    };
+                }
+            } else if (op === 'OP_ELSE') {
+                if (currentBranch.in_if) {
+                    currentBranch.in_if = false;
+                    currentBranch.in_else = true;
+                    if (branchStack.every(b => b.executing)) {
+                        currentBranch.executing = !currentBranch.condition;
+                    }
+                }
+            } else if (op === 'OP_ENDIF') {
+                currentBranch = branchStack.pop() || {
+                    in_if: false,
+                    in_else: false,
+                    executing: true,
+                    condition: true
+                };
+            }
             continue;
         }
 
-        if (op === 'OP_ELSE') {
-            branchState.in_if = false;
-            branchState.in_else = true;
-            branchState.executing = !branchState.executing;
-            continue;
-        }
-
-        if (op === 'OP_ENDIF') {
-            branchState.in_if = false;
-            branchState.in_else = false;
-            branchState.executing = true;
-            continue;
-        }
-
-        if (branchState.executing && opcodes[op]) {
+        if (shouldExecute() && opcodes[op]) {
             currentState = opcodes[op](currentState);
             hints.push(formatState(currentState));
             
             if (currentState.error) {
                 break;
             }
+        } else {
+            hints.push('');
         }
     }
 
