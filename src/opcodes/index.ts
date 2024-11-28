@@ -39,6 +39,12 @@ import { OP_BOOLAND } from './op_booland';
 import { OP_BOOLOR } from './op_boolor';
 import { OP_NUMEQUAL } from './op_numequal';
 import { OP_NUMEQUALVERIFY } from './op_numequalverify';
+import { OP_NUMNOTEQUAL } from './op_numnotequal';
+import { OP_LESSTHAN } from './op_lessthan';
+import { OP_GREATERTHAN } from './op_greaterthan';
+
+
+
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
@@ -105,5 +111,9 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_BOOLOR,
     OP_NUMEQUAL,
     OP_NUMEQUALVERIFY,
+    OP_NUMNOTEQUAL,
+    OP_LESSTHAN,
+    OP_GREATERTHAN,
+    
 
 };
