@@ -37,6 +37,7 @@ import { OP_ADD } from './op_add';
 import { OP_SUB } from './op_sub';
 import { OP_BOOLAND } from './op_booland';
 import { OP_BOOLOR } from './op_boolor';
+import { OP_NUMEQUAL } from './op_numequal';
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
@@ -101,6 +102,7 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_SUB,
     OP_BOOLAND,
     OP_BOOLOR,
+    OP_NUMEQUAL,
 
 };
 
