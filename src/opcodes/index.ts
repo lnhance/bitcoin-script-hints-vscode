@@ -6,6 +6,7 @@ import { OP_IF } from './op_if';
 import { OP_NOTIF } from './op_notif';
 import { OP_ELSE } from './op_else';
 import { OP_ENDIF } from './op_endif';
+import { OP_VERIFY } from './op_verify';
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
@@ -29,6 +30,7 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_NOTIF,
     OP_ELSE,
     OP_ENDIF,
+    OP_VERIFY,
 
 };
 
