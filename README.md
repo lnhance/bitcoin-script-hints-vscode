@@ -43,11 +43,12 @@ fn retrieve_hashed_leaf_item() -> ScriptBuf {
 ## Installation
 
 You can install this extension in several ways:
+[VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=portlandhodl.bitcoin-script-hints)
 
 1. **VS Code Marketplace**
    - Open VS Code
    - Click on the Extensions icon in the Activity Bar
-   - Search for "Bitcoin Script Hints"
+   - Search for "Rust Bitcoin Lib Script! Hints"
    - Click Install
 
 2. **Quick Open**
