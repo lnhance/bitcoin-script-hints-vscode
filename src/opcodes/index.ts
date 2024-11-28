@@ -1,5 +1,4 @@
 import { StackState } from '../stackstate';
-import { makeError, toNumber } from '../utils';
 import { OP_NOP } from './op_nop';
 import { OP_NUMBER } from './op_number';
 import { OP_IF } from './op_if';
@@ -31,7 +30,7 @@ import { OP_SIZE } from './op_size';
 import { OP_1ADD } from './op_1add';
 import { OP_1SUB } from './op_1sub';
 import { OP_NEGATE } from './op_negate';
-
+import { OP_ABS } from './op_abs';
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
@@ -89,7 +88,7 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_1ADD,
     OP_1SUB,
     OP_NEGATE,
-
+    OP_ABS,
     
 
 };
