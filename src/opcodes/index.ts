@@ -49,6 +49,8 @@ import { OP_MAX } from './op_max';
 import { OP_WITHIN } from './op_within';
 import { OP_HASH } from './op_hash';
 import { OP_CHECKSIG } from './op_checksig';
+import { OP_CHECKSIGVERIFY } from './op_checksigverify';
+import { OP_CHECKMULTISIG } from './op_checkmultisig';
 
 
 // Combining all opcodes into a map
@@ -127,6 +129,8 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
 
     // Crypto
     OP_HASH,
+    OP_CHECKSIG,
+    OP_CHECKSIGVERIFY,
     OP_CHECKSIG,
     
 
