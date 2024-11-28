@@ -25,6 +25,12 @@ import { OP_2DUP } from './op_2dup';
 import { OP_3DUP } from './op_3dup';
 import { OP_2OVER } from './op_2over';
 import { OP_2ROT } from './op_2rot';
+import { OP_2SWAP } from './op_2swap';
+import { OP_CAT } from './op_cat';
+import { OP_SIZE } from './op_size';
+import { OP_1ADD } from './op_1add';
+import { OP_1SUB } from './op_1sub';
+
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
@@ -44,6 +50,7 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_14: OP_NUMBER(14),
     OP_15: OP_NUMBER(15),
     OP_16: OP_NUMBER(16),
+
     // Flow control:
     OP_NOP,
     OP_IF,
@@ -51,6 +58,7 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_ELSE,
     OP_ENDIF,
     OP_VERIFY,
+
     // Stack
     OP_TOALTSTACK,
     OP_FROMALTSTACK,
@@ -70,6 +78,18 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_3DUP,
     OP_2OVER,
     OP_2ROT,
+    OP_2SWAP,
+
+    // Splice
+    OP_CAT,
+    OP_SIZE,
+
+    // Arithmetic
+    OP_1ADD,
+    OP_1SUB,
+
+    
+
 };
 
 // Constants
