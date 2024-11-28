@@ -23,6 +23,8 @@ import { OP_TUCK } from './op_tuck';
 import { OP_2DROP } from './op_2drop';
 import { OP_2DUP } from './op_2dup';
 import { OP_3DUP } from './op_3dup';
+import { OP_2OVER } from './op_2over';
+import { OP_2ROT } from './op_2rot';
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
@@ -66,6 +68,8 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_2DROP,
     OP_2DUP,
     OP_3DUP,
+    OP_2OVER,
+    OP_2ROT,
 };
 
 // Constants
