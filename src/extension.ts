@@ -4,7 +4,7 @@ import { parseInitialState, processScript } from './parser';
 export function activate(context: vscode.ExtensionContext) {
     let decorationType = vscode.window.createTextEditorDecorationType({
         after: {
-            margin: '0 0 0 1em',
+            margin: '0 0 0 2em',
             color: new vscode.ThemeColor('editorLineNumber.foreground')
         }
     });
@@ -44,16 +44,19 @@ export function activate(context: vscode.ExtensionContext) {
                 const hints = processScript(scriptContent, initialState);
                 
                 hints.forEach((hint, index) => {
+                    const line = lines[lineOffset + index + 1];
+                    if (!line) { return; };
+                    
                     const position = new vscode.Position(
-                        startPos.line + lineOffset + index, 
-                        0
+                        startPos.line + lineOffset + index + 1,
+                        line.length
                     );
                     
                     decorations.push({
                         range: new vscode.Range(position, position),
                         renderOptions: {
                             after: {
-                                contentText: ` → ${hint}`,
+                                contentText: `    // ${hint}`,
                                 color: hint.includes('ERROR') ? 'red' : undefined
                             }
                         }
