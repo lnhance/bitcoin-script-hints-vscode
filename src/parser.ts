@@ -1,4 +1,4 @@
-import { StackState } from './stackState';
+import { StackState } from './stackstate';
 import { opcodes } from './opcodes';
 
 export function parseInitialState(comment: string): StackState | null {
