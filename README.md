@@ -1,9 +1,9 @@
 <h1 align="center">
-bitcoin-script-hints
+vscode-bitcoin-script-hints 
 </h1>
 
 <p align="center">
-A magical Visual Studio Code extension for Bitcoin Script 🪄
+🔮 A magical Visual Studio Code extension for Bitcoin Script 🪄
 </p>
 
 <p align="center">
@@ -16,8 +16,6 @@ This VSCode extension is intended to be used in Rust projects that use the `scri
 The first line after the `script!` invocation must be in one of these formats:
 - `[X, Y]` (just the main stack)
 - `[X, Y], [Z]` (the main stack and the alt-stack)
-
-You can try it out with some examples from the [Bitcoin Wildlife Sanctuary](https://github.com/Bitcoin-Wildlife-Sanctuary).
 
 ## Example usage
 
