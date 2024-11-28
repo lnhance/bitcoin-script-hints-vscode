@@ -7,7 +7,7 @@ vscode-bitcoin-script-hints
 </p>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/russeree/bitcoin-script-hints-vscode/main/assets/demo.gif" width="600" alt="Bitcoin Script Hints Demo">
+<img src="assets/demo.gif" width="600" alt="Bitcoin Script Hints Demo">
 </p>
 
 ## How does it work?
