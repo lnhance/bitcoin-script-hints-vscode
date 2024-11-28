@@ -16,6 +16,7 @@ import { OP_DUP } from './op_dup';
 import { OP_NIP } from './op_nip';
 import { OP_OVER } from './op_over';
 import { OP_PICK } from './op_pick';
+import { OP_ROLL } from './op_roll';
 
 
 // Combining all opcodes into a map
@@ -53,6 +54,8 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_NIP,
     OP_OVER,
     OP_PICK,
+    OP_ROLL,
+
 };
 
 // Constants
