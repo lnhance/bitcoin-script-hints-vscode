@@ -30,6 +30,7 @@ import { OP_CAT } from './op_cat';
 import { OP_SIZE } from './op_size';
 import { OP_1ADD } from './op_1add';
 import { OP_1SUB } from './op_1sub';
+import { OP_NEGATE } from './op_negate';
 
 
 // Combining all opcodes into a map
@@ -87,6 +88,7 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     // Arithmetic
     OP_1ADD,
     OP_1SUB,
+    OP_NEGATE,
 
     
 
