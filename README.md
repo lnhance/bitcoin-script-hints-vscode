@@ -1,71 +1,79 @@
-# bitcoin-script-hints README
+<h1 align="center">
+bitcoin-script-hints
+</h1>
 
-This is the README for your extension "bitcoin-script-hints". After writing up a brief description, we recommend including the following sections.
+<p align="center">
+A magical Visual Studio Code extension for Bitcoin Script 🪄
+</p>
 
-## Features
+<p align="center">
+<img src="assets/demo.gif" width="600" alt="Bitcoin Script Hints Demo">
+</p>
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## How does it work?
+This VSCode extension is intended to be used in Rust projects that use the `script!` macro (from [rust-bitcoin-script](https://github.com/Bitcoin-Wildlife-Sanctuary/rust-bitcoin-script)).
 
-For example if there is an image subfolder under your extension project workspace:
+The first line after the `script!` invocation must be in one of these formats:
+- `[X, Y]` (just the main stack)
+- `[X, Y], [Z]` (the main stack and the alt-stack)
 
-\!\[feature X\]\(images/feature-x.png\)
+You can try it out with some examples from the [Bitcoin Wildlife Sanctuary](https://github.com/Bitcoin-Wildlife-Sanctuary).
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Example usage
+
+```rust
+use bitcoin_script::{define_pushable, script};
+
+define_pushable!();
+
+fn retrieve_hashed_leaf_item() -> ScriptBuf {
+    script! {
+        // [1, 2], [3] <-- Add this comment
+        OP_DUP   // you should now see [1, 2, 2], [3] here
+        OP_2     // and [1, 2, 2, 2], [3] here
+        OP_ADD   // etc...
+        OP_DEPTH
+        OP_GREATERTHAN
+        OP_IF
+            OP_FROMALTSTACK
+            OP_SWAP
+        OP_ENDIF
+    }
+}
+```
+
+## Installation
+
+You can install this extension in several ways:
+
+1. **VS Code Marketplace**
+   - Open VS Code
+   - Click on the Extensions icon in the Activity Bar
+   - Search for "Bitcoin Script Hints"
+   - Click Install
+
+2. **Quick Open**
+   - Press `Ctrl+P` / `Cmd+P`
+   - Paste `ext install bitcoin-script-hints`
+   - Press Enter
+
+3. **Manual Installation**
+   - Download the `.vsix` file from the [latest release](https://github.com/taproot-wizards/bitcoin-script-hints/releases)
+   - Open VS Code
+   - Press `Ctrl+Shift+P` / `Cmd+Shift+P`
+   - Type "Install from VSIX"
+   - Select the downloaded file
 
 ## Requirements
+- Visual Studio Code >= 1.80.0
+- A Rust project using the `script!` macro
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Features
+- Real-time stack visualization for Bitcoin Script operations
+- Inline hints showing stack state after each operation
+- Support for both main stack and alt-stack visualization
+- Automatic updates as you type
 
-## Extension Settings
+## Acknowledgments
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+This extension is a port of the [bitcoin-script-hints.nvim](https://github.com/taproot-wizards/bitcoin-script-hints.nvim) plugin. Special thanks to the original plugin creators and the [Script Wiz IDE](https://ide.scriptwiz.app) team, which inspired both projects with their excellent stack visualization capabilities.
