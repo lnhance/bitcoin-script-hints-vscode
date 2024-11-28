@@ -47,6 +47,7 @@ import { OP_GREATERTHANOREQUAL } from './op_greaterthanorequal';
 import { OP_MIN } from './op_min';
 import { OP_MAX } from './op_max';
 import { OP_WITHIN } from './op_within';
+import { OP_HASH } from './op_hash';
 
 
 // Combining all opcodes into a map
@@ -122,5 +123,9 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_MIN,
     OP_MAX,
     OP_WITHIN,
+
+    // Crypto
+    OP_HASH,
+
 
 };
