@@ -51,6 +51,7 @@ import { OP_HASH } from './op_hash';
 import { OP_CHECKSIG } from './op_checksig';
 import { OP_CHECKSIGVERIFY } from './op_checksigverify';
 import { OP_CHECKMULTISIG } from './op_checkmultisig';
+import { OP_CHECKMULTISIGVERIFY } from './op_checkmultisigverify';
 
 
 // Combining all opcodes into a map
@@ -131,7 +132,8 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_HASH,
     OP_CHECKSIG,
     OP_CHECKSIGVERIFY,
-    OP_CHECKSIG,
+    OP_CHECKMULTISIG,
+    OP_CHECKMULTISIGVERIFY,
     
 
 
