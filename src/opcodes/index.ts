@@ -18,6 +18,7 @@ import { OP_OVER } from './op_over';
 import { OP_PICK } from './op_pick';
 import { OP_ROLL } from './op_roll';
 import { OP_ROT } from './op_rot';
+import { OP_SWAP } from './op_swap';
 
 
 // Combining all opcodes into a map
@@ -57,7 +58,8 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_PICK,
     OP_ROLL,
     OP_ROT,
-    
+    OP_SWAP,
+
 
 };
 
