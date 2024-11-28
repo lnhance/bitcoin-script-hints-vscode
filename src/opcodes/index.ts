@@ -42,9 +42,8 @@ import { OP_NUMEQUALVERIFY } from './op_numequalverify';
 import { OP_NUMNOTEQUAL } from './op_numnotequal';
 import { OP_LESSTHAN } from './op_lessthan';
 import { OP_GREATERTHAN } from './op_greaterthan';
-
-
-
+import { OP_LESSTHANOREQUAL } from './op_lessthanorequal';
+import { OP_GREATERTHANOREQUAL } from './op_greaterthanorequal';
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
@@ -114,6 +113,7 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_NUMNOTEQUAL,
     OP_LESSTHAN,
     OP_GREATERTHAN,
-    
+    OP_LESSTHANOREQUAL,
+    OP_GREATERTHANOREQUAL,
 
 };
