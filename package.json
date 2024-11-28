@@ -1,15 +1,30 @@
 {
   "name": "bitcoin-script-hints",
-  "displayName": "bitcoin-script-hints",
-  "description": "Display the Bitcoin script! stack state as you code.",
-  "version": "0.0.1",
+  "displayName": "Bitcoin Script Hints",
+  "description": "Real-time stack visualization for Bitcoin Script operations in Rust projects. See the stack state as you code with inline hints showing the main stack and alt-stack after each operation.",
+  "version": "0.2.0",
   "license": "MIT",
   "engines": {
     "vscode": "^1.95.0"
   },
+  "publisher": "Portland.HODL",
   "categories": [
+    "Programming Languages",
     "Other"
   ],
+  "keywords": [
+    "bitcoin",
+    "script",
+    "rust",
+    "stack",
+    "visualization",
+    "hints"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/russeree/bitcoin-script-hints-vscode"
+  },
+  "icon": "assets/icon.png",
   "activationEvents": [
     "onLanguage:rust"
   ],
