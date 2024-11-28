@@ -32,6 +32,7 @@ import { OP_1SUB } from './op_1sub';
 import { OP_NEGATE } from './op_negate';
 import { OP_ABS } from './op_abs';
 import { OP_NOT } from './op_not';
+import { OP_0NOTEQUAL } from './op_0notequal';
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
@@ -91,6 +92,7 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_NEGATE,
     OP_ABS,
     OP_NOT,
+    OP_0NOTEQUAL,
     
 
 };
