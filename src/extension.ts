@@ -66,7 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
                 
                 hints.forEach((hint, index) => {
                     // Skip empty hints (non-executed lines)
-                    if (!hint || hint === '') return;
+                    if (!hint || hint === '') { return; }
 
                     const line = lines[lineOffset + index + 1];
                     if (!line) { return; };
@@ -77,7 +77,7 @@ export function activate(context: vscode.ExtensionContext) {
                     );
                     
                     // Skip decoration for NULL hints
-                    if (hint === 'NULL') return;
+                    if (hint === 'NULL') { return; }
 
                     // Calculate padding based on global max length
                     const currentLength = line.length;

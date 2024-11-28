@@ -39,7 +39,7 @@ export function processScript(content: string, initialState: StackState): string
     function shouldExecute(): boolean {
         // Check if we're in a nested branch that's not executing
         for (const branch of branchStack) {
-            if (!branch.executing) return false;
+            if (!branch.executing) { return false; }
         }
         return currentBranch.executing;
     }
