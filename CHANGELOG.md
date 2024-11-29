@@ -4,6 +4,12 @@ All notable changes to the "bitcoin-script-hints" extension will be documented i
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.3.6] - 2024-12-01
+
+### Removed
+- Removed color theme functionality and configuration
+- Removed Bitcoin Script color theme
+
 ## [0.3.5] - 2024-12-01
 
 ### Added
