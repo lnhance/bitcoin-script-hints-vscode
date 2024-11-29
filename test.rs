@@ -1,6 +1,8 @@
 script! {
-    // [5], []
-    OP_TOALTSTACK
+    // [1,2], []
+    OP_DROP
+    OP_DROP
+    OP_CAT
     OP_DEPTH
     OP_0
     OP_IF
@@ -10,6 +12,7 @@ script! {
         OP_TOALTSTACK
     OP_ELSE
         OP_FROMALTSTACK
+        OP_CAT
     OP_ENDIF
 }
 

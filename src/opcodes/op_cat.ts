@@ -10,6 +10,6 @@ export function OP_CAT(state: StackState): StackState {
     const a = new_state.main.pop();
     const b = new_state.main.pop();
 
-    new_state.main.push(`${a}|${b}`);
+    new_state.main.push(`${b}|${a}`);
     return new_state;
 }
