@@ -30,13 +30,6 @@
   ],
   "main": "./dist/extension.js",
   "contributes": {
-    "grammars": [
-      {
-        "scopeName": "source.rust.bitcoin-script.injection",
-        "path": "./syntaxes/bitcoin-script.tmLanguage.json",
-        "injectTo": ["source.rust"]
-      }
-    ],
     "themes": [
       {
         "label": "Bitcoin Script",
