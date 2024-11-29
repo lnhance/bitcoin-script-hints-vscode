@@ -1,0 +1,60 @@
+{
+    "name": "Bitcoin Script Theme",
+    "colors": {},
+    "tokenColors": [
+        {
+            "scope": "entity.name.function.stack.bitcoin-script",
+            "settings": {
+                "foreground": "#FF8C00"
+            }
+        },
+        {
+            "scope": "entity.name.function.flow.bitcoin-script",
+            "settings": {
+                "foreground": "#C678DD"
+            }
+        },
+        {
+            "scope": "entity.name.function.arithmetic.bitcoin-script",
+            "settings": {
+                "foreground": "#98C379"
+            }
+        },
+        {
+            "scope": "entity.name.function.crypto.bitcoin-script",
+            "settings": {
+                "foreground": "#E06C75"
+            }
+        },
+        {
+            "scope": "entity.name.function.comparison.bitcoin-script",
+            "settings": {
+                "foreground": "#61AFEF"
+            }
+        },
+        {
+            "scope": "entity.name.function.constant.bitcoin-script",
+            "settings": {
+                "foreground": "#E5C07B"
+            }
+        },
+        {
+            "scope": "constant.numeric.array.bitcoin-script",
+            "settings": {
+                "foreground": "#61AFEF"
+            }
+        },
+        {
+            "scope": "constant.numeric.bitcoin-script",
+            "settings": {
+                "foreground": "#61AFEF"
+            }
+        },
+        {
+            "scope": "entity.name.function.hash.bitcoin-script",
+            "settings": {
+                "foreground": "#E06C75"
+            }
+        }
+    ]
+}

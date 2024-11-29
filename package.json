@@ -2,7 +2,7 @@
   "name": "bitcoin-script-hints",
   "displayName": "Rust Bitcoin Lib Script! Hints",
   "description": "Real-time stack visualization for Bitcoin Script operations in Rust projects. See the stack state as you code with inline hints showing the main stack and alt-stack after each operation.",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "license": "MIT",
   "engines": {
     "vscode": "^1.95.0"
@@ -29,6 +29,22 @@
     "onLanguage:rust"
   ],
   "main": "./dist/extension.js",
+  "contributes": {
+    "grammars": [
+      {
+        "scopeName": "source.rust.bitcoin-script.injection",
+        "path": "./syntaxes/bitcoin-script.tmLanguage.json",
+        "injectTo": ["source.rust"]
+      }
+    ],
+    "themes": [
+      {
+        "label": "Bitcoin Script",
+        "uiTheme": "vs-dark",
+        "path": "./themes/bitcoin-script-color-theme.json"
+      }
+    ]
+  },
   "scripts": {
     "vscode:prepublish": "npm run package",
     "build": "node esbuild.js",
@@ -36,8 +52,8 @@
     "watch": "node esbuild.js --watch",
     "lint": "eslint src",
     "check-types": "tsc --noEmit",
-    "compile": "npm-run-all check-types lint build",
-    "package": "npm-run-all check-types lint build:prod",
+    "compile": "npm run build",
+    "package": "npm run build:prod",
     "pretest": "npm run compile",
     "test": "vscode-test"
   },

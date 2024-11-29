@@ -2,12 +2,13 @@ import * as vscode from 'vscode';
 import { parseInitialState, processScript } from './parser';
 
 export function activate(context: vscode.ExtensionContext) {
-    let decorationType = vscode.window.createTextEditorDecorationType({
+    let hintDecorationType = vscode.window.createTextEditorDecorationType({
         after: {
             color: new vscode.ThemeColor('editorLineNumber.foreground')
         }
     });
 
+    // Remove opcode decorations since we're handling it via syntax highlighting
     let activeEditor = vscode.window.activeTextEditor;
 
     function updateDecorations() {
@@ -16,9 +17,9 @@ export function activate(context: vscode.ExtensionContext) {
         }
 
         const text = activeEditor.document.getText();
-        const decorations: vscode.DecorationOptions[] = [];
+        const hintDecorations: vscode.DecorationOptions[] = [];
 
-        // Find all script! macro invocations first to get global max length
+        // Find all script! macro invocations
         const scriptRegex = /script!\s*{([^}]*)}/g;
         let globalMaxLength = 0;
         let match;
@@ -43,7 +44,7 @@ export function activate(context: vscode.ExtensionContext) {
         // Reset regex to start over
         scriptRegex.lastIndex = 0;
 
-        // Second pass: apply decorations using global max length
+        // Second pass: apply hint decorations using global max length
         while (match = scriptRegex.exec(text)) {
             const scriptContent = match[1];
             const startPos = activeEditor.document.positionAt(match.index);
@@ -83,7 +84,7 @@ export function activate(context: vscode.ExtensionContext) {
                     const currentLength = line.length;
                     const padding = ' '.repeat(Math.max(0, targetPosition - currentLength));
                     
-                    decorations.push({
+                    hintDecorations.push({
                         range: new vscode.Range(position, position),
                         renderOptions: {
                             after: {
@@ -96,7 +97,7 @@ export function activate(context: vscode.ExtensionContext) {
             }
         }
 
-        activeEditor.setDecorations(decorationType, decorations);
+        activeEditor.setDecorations(hintDecorationType, hintDecorations);
     }
 
     if (activeEditor) {

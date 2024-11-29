@@ -4,6 +4,23 @@ All notable changes to the "bitcoin-script-hints" extension will be documented i
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.3.4] - 2024-11-30
+
+### Added
+- New color-coded syntax highlighting theme "Bitcoin Script"
+- Categorized Bitcoin Script opcodes with distinct colors:
+  - Stack Operations (Orange): OP_DROP, OP_DUP, OP_SWAP, OP_CAT, etc.
+  - Flow Control (Purple): OP_IF, OP_ELSE, OP_ENDIF, OP_NOP, etc.
+  - Arithmetic (Green): OP_ADD, OP_SUB, OP_MUL, OP_DIV, etc.
+  - Cryptographic (Red): OP_SHA256, OP_CHECKSIG, H(n) syntax, etc.
+  - Comparison (Blue): OP_EQUAL, OP_LESSTHAN, etc.
+  - Constants (Yellow): OP_0 through OP_16, OP_TRUE, OP_FALSE
+
+### Changed
+- Improved syntax highlighting patterns for better accuracy
+- Added missing opcodes to appropriate categories
+- Added aliases (OP_TRUE/OP_FALSE) to constants category
+
 ## [0.3.3] - 2024-11-29
 
 ### Fixed
