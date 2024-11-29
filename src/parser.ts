@@ -45,6 +45,22 @@ export function processScript(content: string, initialState: StackState): string
     }
 
     for (const line of lines) {
+        // Handle pushes to stack
+        const pushMatch = line.match(/\<(.*)\>/);
+        if (pushMatch) {
+            if(shouldExecute()) {
+                const val = pushMatch[1];
+                const new_state = structuredClone(currentState);
+                new_state.main.push(val);
+                currentState = new_state;
+                hints.push(formatState(currentState));
+            }
+            else {
+                hints.push('');
+            }
+            continue;
+        };
+
         const opMatch = line.match(/OP_\w+/);
         if (!opMatch) {  hints.push(''); continue; };
 
