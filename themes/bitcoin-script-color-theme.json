@@ -3,6 +3,55 @@
     "colors": {},
     "tokenColors": [
         {
+            "scope": "keyword.other.opcat.o",
+            "settings": {
+                "foreground": "#FF0000",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "keyword.other.opcat.p",
+            "settings": {
+                "foreground": "#FFA500",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "keyword.other.opcat.underscore",
+            "settings": {
+                "foreground": "#FFFF00",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "keyword.other.opcat.c",
+            "settings": {
+                "foreground": "#00FF00",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "keyword.other.opcat.a",
+            "settings": {
+                "foreground": "#0000FF",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "keyword.other.opcat.t",
+            "settings": {
+                "foreground": "#8A2BE2",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "entity.name.function.rainbow.bitcoin-script",
+            "settings": {
+                "foreground": "#FF1493",
+                "fontStyle": "bold italic underline"
+            }
+        },
+        {
             "scope": "entity.name.function.stack.bitcoin-script",
             "settings": {
                 "foreground": "#FF8C00"

@@ -13,8 +13,19 @@
             "contentName": "meta.embedded.block.bitcoin-script",
             "patterns": [
                 {
+                    "match": "(O)(P)(_)(C)(A)(T)\\b",
+                    "captures": {
+                        "1": { "name": "keyword.other.opcat.o" },
+                        "2": { "name": "keyword.other.opcat.p" },
+                        "3": { "name": "keyword.other.opcat.underscore" },
+                        "4": { "name": "keyword.other.opcat.c" },
+                        "5": { "name": "keyword.other.opcat.a" },
+                        "6": { "name": "keyword.other.opcat.t" }
+                    }
+                },
+                {
                     "comment": "Stack Operations",
-                    "match": "\\b(OP_DROP|OP_DUP|OP_NIP|OP_OVER|OP_PICK|OP_ROLL|OP_ROT|OP_SWAP|OP_TUCK|OP_2DROP|OP_2DUP|OP_3DUP|OP_2OVER|OP_2ROT|OP_2SWAP|OP_DEPTH|OP_SIZE|OP_TOALTSTACK|OP_FROMALTSTACK|OP_CAT|OP_IFDUP)\\b\\s*-?",
+                    "match": "\\b(OP_DROP|OP_DUP|OP_NIP|OP_OVER|OP_PICK|OP_ROLL|OP_ROT|OP_SWAP|OP_TUCK|OP_2DROP|OP_2DUP|OP_3DUP|OP_2OVER|OP_2ROT|OP_2SWAP|OP_DEPTH|OP_SIZE|OP_TOALTSTACK|OP_FROMALTSTACK|OP_IFDUP)\\b\\s*-?",
                     "name": "entity.name.function.stack.bitcoin-script"
                 },
                 {

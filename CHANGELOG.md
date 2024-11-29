@@ -4,6 +4,15 @@ All notable changes to the "bitcoin-script-hints" extension will be documented i
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.3.5] - 2024-12-01
+
+### Added
+- Rainbow road mode highlighting for non-mainnet supported OP_CODES
+- Visual distinction between mainnet and non-mainnet opcodes:
+  - Non-mainnet opcodes now display with rainbow-colored syntax highlighting
+  - Helps developers quickly identify non-standard operations
+  - Improves code readability and safety by highlighting potentially unsupported operations
+
 ## [0.3.4] - 2024-11-30
 
 ### Added
