@@ -47,7 +47,7 @@ export function activate(context: vscode.ExtensionContext) {
             
             // Find initial state comment
             let initialState = null;
-            let lineOffset = 0;
+            let lineOffset = -1;
             
             for (const line of lines) {
                 if (line.trim().startsWith('//') && line.includes('[')) {

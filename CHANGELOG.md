@@ -4,6 +4,12 @@ All notable changes to the "bitcoin-script-hints" extension will be documented i
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.4.2] - 2024-12-03
+
+### Fixed
+- Fixed line offset issues in hint positioning
+- Fixed display name typo
+
 ## [0.4.0] - 2024-12-02
 
 ### Added
