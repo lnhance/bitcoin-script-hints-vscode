@@ -46,7 +46,7 @@ export function processScript(content: string, initialState: StackState): string
 
     for (const line of lines) {
         const opMatch = line.match(/OP_\w+/);
-        if (!opMatch) { continue; };
+        if (!opMatch) {  hints.push(''); continue; };
 
         const op = opMatch[0];
         
