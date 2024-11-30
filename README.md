@@ -1,6 +1,9 @@
 <h1 align="center">
-vscode-bitcoin-script-hints 
+Visual Studio Code Bitcoin Script Hints
 </h1>
+<h2 align="center">
+vscode-bitcoin-script-hints 
+</h2>
 
 <p align="center">
 🔮 A magical Visual Studio Code extension for Bitcoin Script 🪄
