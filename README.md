@@ -54,7 +54,7 @@ You can install this extension in several ways:
 
 2. **Quick Open**
    - Press `Ctrl+P` / `Cmd+P`
-   - Paste `ext install bitcoin-script-hints`
+   - Paste `ext install portlandhodl.bitcoin-script-hints`
    - Press Enter
 
 3. **Manual Installation**
