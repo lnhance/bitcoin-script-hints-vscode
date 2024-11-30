@@ -9,6 +9,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Fixed
 - Fixed line offset issues in hint positioning
 - Fixed display name typo
+- Added red highlighting for error messages in hints
 
 ## [0.4.0] - 2024-12-02
 

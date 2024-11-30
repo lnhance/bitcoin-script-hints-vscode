@@ -82,7 +82,7 @@ export function activate(context: vscode.ExtensionContext) {
                         renderOptions: {
                             after: {
                                 contentText: `${padding}➡ ${hint}`,
-                                color: hint.includes('ERROR') ? 'red' : undefined
+                                color: (hint.includes('ERROR') || hint.includes('Error:')) ? 'red' : undefined
                             }
                         }
                     });
