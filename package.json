@@ -1,7 +1,7 @@
 {
   "name": "bitcoin-script-hints",
   "displayName": "Rust Bitcoin Script! Hints",
-  "description": "Real-time stack visualization for Bitcoin Script operations in Rust projects. See the stack state as you code with inline hints showing the main stack and alt-stack after each operation.",
+  "description": "Realtime Bitcoin script stack visualization in Rust projects. See the stack state as you code with inline hints showing the main stack and alt-stack after each operation.",
   "version": "0.4.4",
   "license": "MIT",
   "engines": {
@@ -16,9 +16,18 @@
     "bitcoin",
     "script",
     "rust",
-    "stack",
+    "btc",
     "visualization",
-    "hints"
+    "hints",
+    "autocomplete",
+    "bitcoin core",
+    "bitcoin rust lib",
+    "satoshi",
+    "magic beans",
+    "satoshi",
+    "mainnet",
+    "signet",
+    "testnet"
   ],
   "repository": {
     "type": "git",
