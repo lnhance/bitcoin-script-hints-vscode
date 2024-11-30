@@ -4,6 +4,38 @@ All notable changes to the "bitcoin-script-hints" extension will be documented i
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.4.0] - 2024-12-02
+
+### Added
+- Enhanced syntax highlighting for Bitcoin Script while preserving Rust syntax
+- Added semantic token support for more precise highlighting
+- Color-coded different operation types:
+  - Stack operations (support.function.stack.bitcoin)
+  - Flow control operations (keyword.control.flow.bitcoin)
+  - Arithmetic operations (keyword.operator.arithmetic.bitcoin)
+  - Cryptographic operations (support.function.crypto.bitcoin)
+  - Comparison operations (keyword.operator.comparison.bitcoin)
+  - Constants (constant.language.bitcoin)
+- Added special rainbow highlighting for OP_CAT
+
+## [0.3.9] - 2024-12-02
+
+### Changed
+- Removed max length calculation for hint positioning
+- Fixed hint positioning to appear immediately after each line instead of having a 2-line gap
+
+## [0.3.8] - 2024-12-01
+
+### Removed
+- Removed color theme functionality and configuration
+- Removed Bitcoin Script color theme
+
+## [0.3.7] - 2024-12-01
+
+### Removed
+- Removed color theme functionality and configuration
+- Removed Bitcoin Script color theme
+
 ## [0.3.6] - 2024-12-01
 
 ### Removed
