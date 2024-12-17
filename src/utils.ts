@@ -16,5 +16,6 @@ export const formatState = (state: StackState): string => {
     const mainStack = state.main.join(', ');
     const altStack = state.alt.length > 0 ? ` [${state.alt.join(', ')}]` : '';
     const error = state.error ? ` Error: ${state.error}` : '';
-    return `[${mainStack}]${altStack}${error}`;
+    const stackSizes = `[${state.main.length}:${state.alt.length}] ➡ `;
+    return `${stackSizes}[${mainStack}]${altStack}${error}`;
 };

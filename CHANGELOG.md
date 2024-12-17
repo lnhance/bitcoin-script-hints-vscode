@@ -4,6 +4,12 @@ All notable changes to the "bitcoin-script-hints" extension will be documented i
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.4.8] - 2024-12-05
+
+### Added
+- Added stack size indicators to hints in the format [main_size:alt_size]
+- Stack hints now show the number of elements in both main and alt stacks
+
 ## [0.4.7] - 2024-12-04
 
 ### Fixed

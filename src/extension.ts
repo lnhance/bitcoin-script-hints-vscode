@@ -81,7 +81,7 @@ export function activate(context: vscode.ExtensionContext) {
                         range: new vscode.Range(position, position),
                         renderOptions: {
                             after: {
-                                contentText: `${padding}➡ ${hint}`,
+                                contentText: `${padding} ${hint}`,
                                 color: (hint.includes('ERROR') || hint.includes('Error:')) ? 'red' : undefined
                             }
                         }
