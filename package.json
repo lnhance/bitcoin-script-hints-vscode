@@ -2,7 +2,7 @@
   "name": "bitcoin-script-hints",
   "displayName": "Rust Bitcoin Script! Hints",
   "description": "Realtime Bitcoin script stack visualization in Rust projects. See the stack state as you code with inline hints showing the main stack and alt-stack after each operation.",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "license": "MIT",
   "engines": {
     "vscode": "^1.95.0"

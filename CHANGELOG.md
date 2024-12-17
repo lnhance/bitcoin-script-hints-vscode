@@ -4,6 +4,12 @@ All notable changes to the "bitcoin-script-hints" extension will be documented i
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.4.7] - 2024-12-04
+
+### Fixed
+- Fixed syntax highlighting issues with opcodes requiring extra spaces
+- Improved opcode boundary detection in TextMate grammar
+
 ## [0.4.2] - 2024-12-03
 
 ### Fixed
