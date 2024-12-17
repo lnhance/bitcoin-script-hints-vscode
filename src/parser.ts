@@ -45,6 +45,21 @@ export function processScript(content: string, initialState: StackState): string
     }
 
     for (const line of lines) {
+        // Handle hex value pushes (0x format)
+        const hexMatch = line.trim().match(/^0x([0-9a-fA-F]+)/);
+        if (hexMatch) {
+            if (shouldExecute()) {
+                const hexValue = hexMatch[1];
+                const new_state = structuredClone(currentState);
+                new_state.main.push(hexValue);
+                currentState = new_state;
+                hints.push(formatState(currentState));
+            } else {
+                hints.push('');
+            }
+            continue;
+        }
+
         // Handle pushes to stack
         const pushMatch = line.match(/\<(.*)\>/);
         if (pushMatch) {

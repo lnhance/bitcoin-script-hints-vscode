@@ -12,6 +12,11 @@
             "end": "\\}",
             "patterns": [
                 {
+                    "comment": "Hex Data Pushes",
+                    "match": "0x[0-9a-fA-F]+",
+                    "name": "string.quoted.double.hex"
+                },
+                {
                     "match": "(O)(P)(_)(C)(A)(T)(?=\\s|$|[^A-Z_])",
                     "captures": {
                         "1": { "name": "constant.character.escape.rainbow1" },
