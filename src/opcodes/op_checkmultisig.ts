@@ -7,7 +7,7 @@ export function OP_CHECKMULTISIG(state: StackState): StackState {
     }
 
     const new_state = structuredClone(state);
-    
+
     // Get number of pubkeys
     const n_pubkeys = new_state.main.pop();
     const [num_pubkeys, err_pubkeys] = toNumber(n_pubkeys!);
@@ -40,18 +40,24 @@ export function OP_CHECKMULTISIG(state: StackState): StackState {
         return makeError("Stack underflow: not enough signatures", state);
     }
 
-    // Remove signatures
+    // Check signatures
+    let success = true;
     for (let i = 0; i < num_sigs!; i++) {
-        new_state.main.pop();
+        const sig = new_state.main.pop();
+        if (sig?.toString().startsWith("0")) {
+            success = false;
+            break;
+        }
     }
 
-    // Remove the extra dummy element that Bitcoin requires
+    // Consume an extra stack value due to a bug in Bitcoin
     if (new_state.main.length < 1) {
-        return makeError("Need dummy element", state);
+        return makeError("Need an extra stack value for OP_CHECKMULTISIG bug", state);
     }
     new_state.main.pop();
 
-    // Always push 1 to simulate successful verification
-    new_state.main.push("1");
+    // Push 1 if all signatures are valid, otherwise push 0
+    new_state.main.push(success ? "1" : "0");
+
     return new_state;
 }
