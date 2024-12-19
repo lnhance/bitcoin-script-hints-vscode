@@ -56,6 +56,7 @@ import { OP_CHECKSIGADD } from './op_checksigadd';
 import { OP_CHECKSIGFROMSTACK } from './op_checksigfromstack';
 import { OP_INTERNALKEY } from './op_internalkey';
 import { OP_PAIRCOMMIT } from './op_paircommit';
+import { OP_CLTV } from './op_cltv';
 
 // Combining all opcodes into a map
 export const opcodes: { [key: string]: (state: StackState) => StackState } = {
@@ -158,7 +159,7 @@ export const opcodes: { [key: string]: (state: StackState) => StackState } = {
     OP_CHECKSIGADD,
 
     // Locktime
-    OP_CHECKLOCKTIMEVERIFY: OP_NOP,
+    OP_CHECKLOCKTIMEVERIFY: OP_CLTV,
     OP_CHECKSEQUENCEVERIFY: OP_NOP,
 
     // LNhance
